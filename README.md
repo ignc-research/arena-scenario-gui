@@ -96,7 +96,7 @@ For example with `map_resolution` = 0.05, `scale` = 1.0, `X_rviz` = 0.3m and `Y_
 
 ### Legend for the already used maps
 
-Ros launch with the flag `map_file:="<map_name>"`. For example for `map1` use `map_file:="map1"`. Make sure that the maps (`.png` file, `.yaml` file etc.) are in the folder `../simulator_setup/maps`. This is necessary only for the usage later on in arena-rosnav.
+From the following table could be seen the resolution and the origin of all tested maps for a better overview. Regarding testing it later on in the simulation arena-rosnav, in the Ros launch the flag `map_file:="<map_name>"` should be used. For example for `map1` use `map_file:="map1"`. Make sure that the maps (`.png` file, `.yaml` file etc.) are in the folder `../simulator_setup/maps`.
 
 | Map                      | Resolution  | Origin (x,y)   |
 | ------------------------ | ----------- | -------------- |
