@@ -8,13 +8,13 @@ The GUI represents an user interface for creating scenarios more intuitive, a lo
 | *Scenario with 3 dynamic obstacles* | *Scenario with 20 dynamic obstacles* |
 
 ### Requirements
-1. Install Ubuntu 18.04.
+1. The GUI works on every OS. For using it together with arean-rosnav, install preferably Ubuntu 18.04. The following commands are therefore for Ubuntu. For other OS please refer to the section 'Overview for working on different operation systems'.
 2. Install [Kivy](https://kivy.org/doc/stable/gettingstarted/installation.html#install-pip). <br />
 `$ python -m pip install --upgrade pip setuptools virtualenv` <br />
 `$ python -m virtualenv kivy_venv` <br />
 `$ source $HOME/kivy_venv/bin/activate` <br />
 `$ python -m pip install kivy[base] kivy_examples`
-3. Clone the whole project.
+3. Clone the project.
 4. (if needed) install/update Pillow <br />
 `$ python -m pip install --upgrade Pillow`
 5. (if needed) install xclip <br />
@@ -22,23 +22,26 @@ The GUI represents an user interface for creating scenarios more intuitive, a lo
 6. (optional) if you want to support the `SHIFT+TAB` behaviour to jump backwards from text field to another, change in the file `$HOME/kivy_venv/lib/python-{version}/site-packages/kivy/uix/behaviors/focus.py` in function `keyboard_on_key_down()` `['shift']` to `{'shift'}`<br /><br />
 **Attention:** Depending on the Python version that you are using, you may have to run the operations above with for example `python3` insteed of `python`!
 
-### How to run
+### How to run the GUI
 1. Upload an image of the map in the `input` folder inside of the root folder.
 2. Activate the kivy environment. <br />
 `$ source $HOME/kivy_venv/bin/activate`
 3. Navigate inside the project root folder. <br />
-`$ cd arena-rosnav/gui`
+`$ cd arena-scenario-gui`
 4. Execute the `paint.py` file. <br />
 `$ python paint.py`
 5. Generate a new scenario in the paint app. Look at the rules! When ready, the next script `parser.py` will automatically start. <br />
-6. The generated json file will be saved under the name `new_scenario.json` in the `output` folder as well as in the folder `arena-rosnav/simulator_setup/scenarios/`, where all scenarios are stored.
+6. The generated json file will be saved under the name `new_scenario.json` in the `output` folder.
+
+### How to use and test it in arena-rosnav
+6. The generated json file could be copy-pasted in the folder `arena-rosnav/simulator_setup/scenarios/`, where all scenarios are stored.
 7. Modify the `arena-rosnav/arena_bringup/launch/sublaunch_testing/task_generator.launch` file, changing the name of the expected json file to `new_scenario.json`. <br />
 8. Activate rosnav. <br />
 `$ workon rosnav` <br />
-**Attention:** Rosnav and kivy_env might not be able to stay active at the same time, so activate kivy_env for the gui and rosnav for launching.
+**Attention:** Rosnav and kivy_env might not be able to stay active at the same time, so activate kivy_env for the GUI and rosnav for launching.
 8. In `arena-rosnav` run for example <br />
-`$ roslaunch arena_bringup start_arena_flatland.launch local_planner:="teb" use_viz:="true" map_file:="map1" rviz_file:="nav2"`. <br />
-The file `nav2.rviz` is different from `nav.rviz` only by two things - the map is horizontal and the first couple of obstacles are visible with the start of rviz. The program still works will all available rviz files, just the visualization will be slightly defferent. Make sure also that the map (`.png` file, `.yaml` file etc.), here `map1` is in the folder `../simulator_setup/maps`. Please take a look at the section `Legend for the already tested maps` below.
+`$ roslaunch arena_bringup start_arena_flatland.launch local_planner:="teb" use_viz:="true" map_file:="map1" rviz_file:="nav"`. <br />
+Make sure that the map (`.png` file, `.yaml` file etc.), here `map1` is in the folder `../simulator_setup/maps`. Please take a look at the section `Legend for the already tested maps` below.
 
 ### Folder structure
 1. The root folder consist of both executable files `paint.py` and `parser.py`, as well as the `README.md` file.
@@ -93,7 +96,7 @@ For example with `map_resolution` = 0.05, `scale` = 1.0, `X_rviz` = 0.3m and `Y_
 
 ### Legend for the already used maps
 
-Ros launch with the flag `map_file:="<map_name>"`. For example for `map1` use `map_file:="map1"`. Make sure that the maps (`.png` file, `.yaml` file etc.) are in the folder `../simulator_setup/maps`.
+Ros launch with the flag `map_file:="<map_name>"`. For example for `map1` use `map_file:="map1"`. Make sure that the maps (`.png` file, `.yaml` file etc.) are in the folder `../simulator_setup/maps`. This is necessary only for the usage later on in arena-rosnav.
 
 | Map                      | Resolution  | Origin (x,y)   |
 | ------------------------ | ----------- | -------------- |
@@ -114,7 +117,7 @@ Ros launch with the flag `map_file:="<map_name>"`. For example for `map1` use `m
 | open_field_3             | 0.05        | (0.0, 0.0)     |
 
 ### Overview for working on different operation systems
-#### (only for running this scenario gui, not the whole project!)
+#### (only for this GUI, not for arena-rosnav)
 
 1. Ubuntu OR Windows with WSL2 + GUI support <br />
 `$ source kivy_venv/bin/activate` <br />
