@@ -540,7 +540,7 @@ with open('output/new_scenario.json') as file:
     print(file_contents)
 
 # copy and paste the file to arena-rosnav/simulator-setup/scenarios, where all scenarious are stored
-copyfile('output/new_scenario.json', '../simulator_setup/scenarios/new_scenario.json')
+#copyfile('output/new_scenario.json', '../simulator_setup/scenarios/new_scenario.json')
 # to do it manuelly from the console, from arena-rosnav/gui run:
 # $ sudo cp output/new_scenario.json ../simulator_setup/scenarios/
 
