@@ -1,7 +1,15 @@
-# Drawing panel for designing scenarios easily
+# Arena-Scenario-GUI
+This application provides a user interface for creating complex, collaborative scenarios more intuitive, a lot faster and in a much simpler way. It is designed to work with the 2D simulator and DRL training environment [arena-rosnav](https://github.com/ignc-research/arena-rosnav) for robot navigation in highly dynamic and collaborative environments. 
 
-### Overview
-The GUI represents an user interface for creating scenarios more intuitive, a lot faster and in a much simpler way. The generated Kivy-App is not only easy to install, set up and run, but also easy to modify and extend. It was already positive evaluated during a big evaluation run, where certain approaches were tested on 100 different scenarios, created correctly from the GUI within only a couple of hours. Using the GUI for the first time without reading its rules is of course possible, but may not be enough to use its entire potential. Using it after reading the rules should be pretty much straight-forward. But using the App after reading also the small tips, written in this documentation should allow the user to create a scenario every time even faster and faster.
+## Features
+ * Easily create complex scenarios via an GUI via drawing, dragging and dropping
+ * Include static as well as dynamic obstacles and different obstacle types
+ * Configure obstacle behavior like velocity, paths, triggering points with simple UI commands
+ * Scenario is encoded in a .json file which is directly compatible with [arena-rosnav](https://github.com/ignc-research/arena-rosnav).
+ * Kivy-App easy to install, set up, run and aasy to modify and extend
+
+
+The app was validated during a big evaluation run, where certain approaches were tested on 100 different scenarios, created correctly from the GUI within only a couple of hours. Using the GUI for the first time without reading its rules is of course possible, but may not be enough to use its entire potential. Using it after reading the rules should be pretty much straight-forward. But using the App after reading also the small tips, written in this documentation should allow the user to constantly increase the speed of scenario generation.
 
 | <img height="400" src="media/img/example_scenario1_presentation_faster_x4_cropped.gif"> | <img height="400" src="media/img/example_scenario2_presentation_faster_x4_cropped.gif"> |
 |:--:| :--:| 
